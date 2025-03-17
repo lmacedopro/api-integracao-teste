@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: api-teste-meetime
+server:
+  port: 8080
+
+app:
+  base:
+    url: http://localhost:${server.port}
+    ngrok-url: ${NGROK_BASE_URL}
+
+hubspot:
+  config:
+    app-id: 9318066
+    dev-test-account: 49532047
+    dev-api-key: c0e4da7f-a4fc-41c4-9e9a-b84b2c581015
+    api-base-url: https://api.hubapi.com
+    api-token-uri: ${hubspot.config.api-base-url}/oauth/v1/token
+    oauth2-client-id: ${HUBSPOT_CLIENT_ID}
+    oauth2-client-secret: ${HUBSPOT_CLIENT_SECRET}
+    oauth2-url: https://app.hubspot.com/oauth/${hubspot.config.dev-test-account}/authorize
+    oauth2-scopes: oauth,crm.objects.contacts.read,crm.objects.contacts.write
+    oauth2-redirect-uri: ${app.base.url}/oauth/callback
+    notification-config-url: /webhooks/v3/${hubspot.config.app-id}/settings?hapikey=${hubspot.config.dev-api-key}
+    notification-target-url: /contacts/notification
+
+resilience4j:
+  ratelimiter:
+    instances:
+      contactsRateLimiter:
+        limitForPeriod: 110
+        limitRefreshPeriod: 10s
+        timeoutDuration: 500ms

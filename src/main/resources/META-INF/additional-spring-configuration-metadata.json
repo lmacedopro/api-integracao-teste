@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "app.base.url",
+    "type": "java.lang.String",
+    "description": "A description for 'app.base.url'"
+  },
+  {
+    "name": "app.base.nrok.url",
+    "type": "java.lang.String",
+    "description": "A description for 'app.base.nrok.url'"
+  },
+  {
+    "name": "hubspot.config.dev-test-account",
+    "type": "java.lang.String",
+    "description": "A description for 'hubspot.config.dev-test-account'"
+  },
+  {
+    "name": "app.base.ngrok.url",
+    "type": "java.lang.String",
+    "description": "A description for 'app.base.ngrok.url'"
+  },
+  {
+    "name": "app.base.ngrok-url",
+    "type": "java.lang.String",
+    "description": "A description for 'app.base.ngrok-url'"
+  },
+  {
+    "name": "hubspot.config.notification-target-url",
+    "type": "java.lang.String",
+    "description": "A description for 'hubspot.config.notification-target-url'"
+  }
+]}
